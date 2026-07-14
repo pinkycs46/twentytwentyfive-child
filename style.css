@@ -1,0 +1,981 @@
+/*
+Theme Name: Twenty Twenty-Five Child
+Template: twentytwentyfive
+Version: 1.0.0
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+/* --- CUSTOM VARIABLES --- */
+:root {
+    --primary-color: #8A1529; /* Liverpool Deep Burgundy */
+    --primary-dark: #5C0E1B;
+    --secondary-color: #0F2042; /* Premium Deep Navy */
+    --accent-color: #D3A13B; /* Gold Accent */
+    --accent-yellow: #FFCC00; /* Band Banner Yellow */
+    --text-color: #333333;
+    --text-muted: #666666;
+    --light-bg: #F8F9FA;
+    --white: #FFFFFF;
+    --border-color: #E2E8F0;
+    --font-title: 'Outfit', 'Segoe UI', sans-serif;
+    --font-sans: 'Inter', 'Segoe UI', sans-serif;
+    --max-width: 1200px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+}
+
+/* --- BASE STYLES --- */
+.univ-body {
+    font-family: var(--font-sans);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--white);
+    -webkit-font-smoothing: antialiased;
+}
+
+.univ-body h1, .univ-body h2, .univ-body h3, .univ-body h4, .univ-body h5, .univ-body h6 {
+    font-family: var(--font-title);
+    color: var(--secondary-color);
+    margin-top: 0;
+}
+
+.univ-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.univ-section {
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- BUTTONS --- */
+.univ-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    font-family: var(--font-title);
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    border: 2px solid transparent;
+}
+
+.univ-btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white) !important;
+}
+
+.univ-btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.univ-btn-secondary {
+    background-color: transparent;
+    color: var(--secondary-color) !important;
+    border-color: var(--secondary-color);
+}
+
+.univ-btn-secondary:hover {
+    background-color: var(--secondary-color);
+    color: var(--white) !important;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.univ-btn-accent {
+    background-color: var(--secondary-color);
+    color: var(--white) !important;
+}
+
+.univ-btn-accent:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* --- 1. HERO SECTION --- */
+.univ-hero {
+    height: 550px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 80px;
+    position: relative;
+}
+
+.univ-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(15,32,66,0.3) 0%, rgba(15,32,66,0.85) 100%);
+    z-index: 1;
+}
+
+.univ-hero-content {
+    background: transparent;
+    border: 3px solid rgba(255, 255, 255, 0.85);
+    padding: 40px;
+    max-width: 600px;
+    color: var(--white);
+    backdrop-filter: blur(5px);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.univ-hero-content h1 {
+    color: var(--white);
+    font-size: 45px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+.univ-hero-content p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    font-weight: 400;
+}
+
+/* --- 2. INTRO SECTION --- */
+.univ-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.univ-breadcrumb a {
+    color: var(--primary-color);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.univ-breadcrumb span.sep {
+    color: var(--text-muted);
+}
+
+.univ-breadcrumb span.current {
+    color: var(--text-muted);
+}
+
+.univ-breadcrumb svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+.univ-intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.univ-intro-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+}
+
+
+.univ-intro-text h2 {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.univ-intro-text .subtitle {
+    color: #000000;
+    font-family: var(--font-title);
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.univ-intro-text .desc {
+    font-size: 16px;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+/* --- 3. STATS SECTION --- */
+.univ-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.univ-stat-card {
+    border: 2px solid rgba(255,255,255,0.25);
+    padding: 40px 30px;
+    text-align: center;
+    background: rgba(255,255,255,0.05);
+    color: var(--white);
+    backdrop-filter: blur(5px);
+    transition: var(--transition);
+}
+
+
+.univ-stat-card h3 {
+    font-size: 50px;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+.univ-stat-card p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+    margin: 0;
+    font-weight: 500;
+}
+
+/* --- 4. ALUMNI BENEFITS --- */
+.univ-section-title {
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+.univ-section-title h2 {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.univ-section-title p {
+    color: var(--text-muted);
+    max-width: 800px;
+    margin: 10px 0 0;
+}
+
+.univ-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.univ-benefit-card {
+    padding: 20px;
+    transition: var(--transition);
+}
+
+
+.univ-benefit-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--light-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+
+.univ-benefit-icon img {
+    max-width: 32px;
+    max-height: 32px;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+
+.univ-benefit-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.univ-benefit-card p {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* --- 5. BAND BANNER --- */
+.univ-band-banner {
+    padding: 30px 0;
+    background-color: var(--accent-yellow);
+    box-shadow: var(--shadow-sm);
+}
+
+.univ-band-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.univ-band-left {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex: 1;
+}
+
+.univ-band-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15,32,66,0.1);
+    border-radius: 4px;
+}
+
+.univ-band-icon img {
+    max-width: 32px;
+    max-height: 32px;
+    object-fit: contain;
+}
+
+.univ-band-info h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--secondary-color);
+}
+
+.univ-band-info p {
+    margin: 0;
+    font-size: 15px;
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.univ-band-cta .univ-btn {
+    white-space: nowrap;
+    padding: 12px 30px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.univ-band-cta .univ-btn svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+    transition: var(--transition);
+}
+
+.univ-band-cta .univ-btn:hover svg {
+    transform: translateX(4px);
+}
+
+/* --- 6. SUCCESS STORIES --- */
+.univ-stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.univ-story-card {
+    background: var(--white);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+
+.univ-story-image {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+}
+
+.univ-story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+
+.univ-story-video-wrapper {
+    position: relative;
+    height: 240px;
+    background: #000;
+}
+
+.univ-story-video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.univ-story-info {
+    padding: 30px;
+}
+
+.univ-story-info h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.univ-story-info .subtitle {
+    color: #000000;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.univ-story-info p {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* --- 7. MID SECTION & ACCORDION --- */
+.univ-mid-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 70px;
+    align-items: flex-start;
+}
+
+.univ-mid-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: var(--shadow-lg);
+}
+
+.univ-mid-content h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.univ-mid-content .subtitle {
+    color: #000000;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Accordion Component */
+.univ-accordion {
+    margin-bottom: 40px;
+}
+
+.univ-accordion-item {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.univ-accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    cursor: pointer;
+    user-select: none;
+    transition: var(--transition);
+}
+
+.univ-accordion-header h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin: 0;
+    transition: var(--transition);
+}
+
+.univ-accordion-header:hover h4 {
+    color: var(--primary-color);
+}
+
+.univ-accordion-icon {
+    position: relative;
+    width: 18px;
+    height: 18px;
+}
+
+.univ-accordion-icon::before, .univ-accordion-icon::after {
+    content: '';
+    position: absolute;
+    background-color: var(--secondary-color);
+    transition: var(--transition);
+}
+
+/* Plus Horizontal line */
+.univ-accordion-icon::before {
+    top: 8px;
+    left: 0;
+    width: 18px;
+    height: 2px;
+}
+
+/* Plus Vertical line */
+.univ-accordion-icon::after {
+    top: 0;
+    left: 8px;
+    width: 2px;
+    height: 18px;
+}
+
+.univ-accordion-item.active .univ-accordion-icon::after {
+    transform: rotate(90deg);
+    opacity: 0;
+}
+
+.univ-accordion-item.active .univ-accordion-icon::before {
+    transform: rotate(180deg);
+}
+
+.univ-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+}
+
+.univ-accordion-item.active .univ-accordion-content {
+    max-height: 1000px;
+    transition: max-height 0.4s cubic-bezier(1, 0, 1, 0);
+}
+
+.univ-accordion-content p {
+    padding-bottom: 20px;
+    color: var(--text-muted);
+    font-size: 15px;
+    margin: 0;
+}
+
+/* --- 8. LATEST NEWS --- */
+.univ-news-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+}
+
+/* Left side featured news */
+.univ-news-featured {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+
+.univ-news-featured-img {
+    height: 320px;
+    overflow: hidden;
+}
+
+.univ-news-featured-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+
+.univ-news-featured-content {
+    padding: 35px;
+}
+
+.univ-news-date {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.univ-news-featured-content h3 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.univ-news-featured-content p {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}
+
+/* Right side news list */
+.univ-news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.univ-news-item {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 25px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    display: block;
+    text-decoration: none;
+}
+
+
+.univ-news-item h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--secondary-color);
+    transition: var(--transition);
+}
+
+
+.univ-news-item p {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* --- 9. CAREER SECTION --- */
+.univ-career-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.univ-career-card {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+
+.univ-career-details {
+    flex: 1;
+}
+
+.univ-career-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.univ-career-meta {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.univ-career-badge {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.univ-career-badge-loc {
+    background-color: rgba(15,32,66,0.08);
+    color: var(--secondary-color);
+}
+
+.univ-career-badge-type {
+    background-color: rgba(138,21,41,0.08);
+    color: var(--primary-color);
+}
+
+.univ-career-desc {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin: 0;
+    max-width: 800px;
+}
+
+.univ-career-apply {
+    margin-left: 30px;
+}
+
+/* --- KEYFRAMES --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- RESPONSIVENESS --- */
+@media (max-width: 991px) {
+    .univ-section {
+        padding: 60px 0;
+    }
+    .univ-intro-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .univ-mid-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .univ-news-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+}
+
+@media (max-width: 767px) {
+    .univ-hero-content {
+        padding: 30px;
+        margin: 0 10px;
+    }
+    .univ-hero-content h1 {
+        font-size: 32px;
+    }
+    .univ-intro-text h2 {
+        font-size: 30px;
+    }
+    .univ-section-title h2 {
+        font-size: 28px;
+    }
+    .univ-band-flex {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .univ-career-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .univ-career-apply {
+        margin-left: 0;
+        width: 100%;
+    }
+    .univ-career-apply .univ-btn {
+        width: 100%;
+    }
+}
+
+/* --- VIDEO OVERLAY & POPUP MODAL --- */
+.univ-video-trigger {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    background: #000;
+    overflow: hidden;
+    cursor: pointer;
+}
+.univ-video-trigger img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.univ-play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+.univ-play-icon {
+    width: 60px;
+    height: 60px;
+    fill: #ffffff;
+    background: rgba(138, 21, 41, 0.95); /* Deep burgundy background */
+    border-radius: 50%;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Modal Popup Styling */
+.univ-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.univ-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+}
+.univ-modal-container {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    background: #000;
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 100000;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+}
+.univ-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 35px;
+    font-weight: 300;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 100001;
+    transition: color 0.2s ease;
+}
+.univ-modal-close:hover {
+    color: #8A1529;
+}
+.univ-modal-content {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+}
+.univ-modal-content iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* --- MID SECTION STATIC ACCORDION LIST --- */
+.univ-mid-content .univ-mid-desc {
+    text-transform: none;
+    color: var(--text-muted);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 35px;
+}
+.univ-static-list {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.univ-static-item {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+.univ-static-item h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin: 0 0 8px 0;
+}
+.univ-static-item p {
+    color: var(--text-muted);
+    font-size: 15px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* --- CAREERS SECTION LIST --- */
+.univ-career-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+.univ-career-item-col {
+    border-top: 1px solid #d3d3d3;
+    padding-top: 20px;
+    position: relative;
+}
+.univ-career-item-col .univ-career-header-wrapper {
+    margin-bottom: 15px;
+}
+.univ-career-item-col .univ-career-link {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0F2042;
+    text-decoration: underline;
+    font-family: var(--font-title);
+}
+.univ-career-item-col .univ-career-desc {
+    color: #4a4a4a;
+    font-size: 15px;
+    line-height: 1.6;
+    font-family: var(--font-body);
+}
+
+/* --- PLACEHOLDER --- */
+.univ-story-card-placeholder {
+    background: #333;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: var(--font-title);
+}
+
+.univ-play-icon-custom {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.35));
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
