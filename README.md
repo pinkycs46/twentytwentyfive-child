@@ -37,14 +37,5 @@ A custom WordPress child theme built on top of the **Twenty Twenty-Five** parent
 * `latest_news` — News updates
 * `career` — Job listings
 
----
 
-## Setup & Push to GitHub
 
-Once you have initialized Git locally, commit the new README file and push:
-
-```bash
-git add README.md
-git commit -m "Add project documentation README"
-git push origin main
-```
